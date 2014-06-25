@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-  
 
-# import 
+import re
 
 def header():
     header = '''
@@ -20,8 +20,16 @@ end program
 
 ####################
 
-def tear():
-    print 'tear file'
+def tear(file):
+    text = open(file)
+
+    lines = text.readlines()
+
+    for line in lines:
+        if line == 'def':
+            re.split('def *:', render)
+        else:
+            pass
 
 
 
@@ -44,7 +52,8 @@ def render():
     print teardown_doc
 
 # 
-
+# header()
+#
 header()
-render()
+tear('render.py')
 footer()

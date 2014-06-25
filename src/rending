@@ -1,0 +1,18 @@
+ header():
+    header = '''
+program main
+    use a_class
+    implicit none
+    real(8) :: a
+    real(8) :: b
+    '''
+    print header
+
+ footer():
+    footer = '''
+end program
+    '''
+    print footer
+
+####################
+

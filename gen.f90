@@ -4,9 +4,14 @@ program main
     integer :: a
     real(8) :: b
     
-
+	setup
     ! Place code here that should run before each test
-    
+    	simple sdf
+    	coasd here 
+    	you see 
+    end setup
+
+    teardown
 
     assert_equal(1, 5, 4)
     
