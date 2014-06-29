@@ -15,32 +15,30 @@ def footer():
     teardown_doc = cutup('teardown', 'end teardown')
     return teardown_doc + '''end program'''
 
-
-
 def render():
-    name = get_name()
-    # assert_doc = cutup('test', 'end test')
-    print name
-    print '\tend subroutine\n'
-
-
-
-def get_name():
     count = 0
     split = ''
 
-    def changev(matched):
+    def change1(matched):
         return matched.group(1) + 'subroutine ' + matched.group(3) 
 
+    def change2(matched):
+        return matched.group(1) + 'call ' + matched.group(3)
+    
     for line in raw_text:
         if re.match('(\s*)(test\s+)(\w+\s*)', line):
             count += 1
-            split += re.sub('(\s*)(test\s+)(\w+\s*)', changev, line) 
+            name1 = re.sub('(\s*)(test\s+)(\w+\s*)', change1, line)
+            name2 = re.sub('(\s*)(test\s+)(\w+\s*)', change2, line)
+            split += name1
             continue
         if re.match('\s*end test\s*', line):
             break
         if count > 0:
             split += line
+
+    split += '\tend subroutine\n'
+    split += name2
     return split
 
 
@@ -77,6 +75,6 @@ raw_text = open('circle_class.fun')
 temp =  raw_tt.count('end test')
 
 for i in range(temp):
-    render()
+    print render()
 
 print footer()
