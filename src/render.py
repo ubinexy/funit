@@ -1,59 +1,82 @@
 # -*- coding: utf-8 -*-  
 
 import re
+raw_text = open('circle_class.fun')
 
 def header():
-    header = '''
-program main
-    use a_class
-    implicit none
-    real(8) :: a
-    real(8) :: b
-    '''
-    print header
+    header1 = '''program main\n''' 
+    header2 = cutup('module','contains')
+    setup_doc = cutup('setup', 'end setup')
+    return header1 + header2 + setup_doc
+
+
 
 def footer():
-    footer = '''
-end program
-    '''
-    print footer
-
-####################
-
-def tear(file):
-    text = open(file)
-
-    lines = text.readlines()
-
-    for line in lines:
-        if line == 'def':
-            re.split('def *:', render)
-        else:
-            pass
+    teardown_doc = cutup('teardown', 'end teardown')
+    return teardown_doc + '''end program'''
 
 
 
 def render():
-    setup_doc ='''
-    ! Place code here that should run before each test
-    '''
-
-    teardown_doc = '''
-    ! This code runs immediately after each test
-    '''
-
-    assert_doc ='''
-    assert_equal(1, 5, 4)
-    '''
+    name = get_name()
+    # assert_doc = cutup('test', 'end test')
+    print name
+    print '\tend subroutine\n'
 
 
-    print setup_doc
-    print assert_doc
-    print teardown_doc
 
-# 
-# header()
-#
-header()
-tear('render.py')
-footer()
+def get_name():
+    count = 0
+    split = ''
+
+    def changev(matched):
+        return matched.group(1) + 'subroutine ' + matched.group(3) 
+
+    for line in raw_text:
+        if re.match('(\s*)(test\s+)(\w+\s*)', line):
+            count += 1
+            split += re.sub('(\s*)(test\s+)(\w+\s*)', changev, line) 
+            continue
+        if re.match('\s*end test\s*', line):
+            break
+        if count > 0:
+            split += line
+    return split
+
+
+
+def cutup(tag, _tag):
+    bra = '\s*' + tag + '[\s\S]*'
+    ket = '\s*' + _tag + '[\s\S]*'
+
+    comment = '\s*'+'!'+'[\s\S]*'
+    count = 0
+    split = ''
+
+    for line in raw_text:
+        if re.match(comment, line):
+            continue
+        if re.match(bra, line):
+            count += 1
+            continue
+        if re.match(ket, line):
+            break
+        if count > 0:
+            split += line
+    return split
+
+
+
+# ヽ(# ≧Д≦)ノ
+
+print header()
+raw_text = open('circle_class.fun')
+raw_tt = raw_text.read()
+raw_text = open('circle_class.fun')
+
+temp =  raw_tt.count('end test')
+
+for i in range(temp):
+    render()
+
+print footer()
