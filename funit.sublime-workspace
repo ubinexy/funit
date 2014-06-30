@@ -1,0 +1,272 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"a",
+				"a"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 127.0,
+		"selected_items":
+		[
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				"sfor",
+				"Set Syntax: MinimalFortran"
+			],
+			[
+				"sfo",
+				"Set Syntax: MinimalFortran"
+			],
+			[
+				"pre",
+				"Markdown Preview: Github Flavored Markdown: Preview in Browser"
+			],
+			[
+				"ssmd",
+				"Set Syntax: Markdown"
+			],
+			[
+				"ssmin",
+				"Set Syntax: MinimalFortran"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"s f",
+				"Set Syntax: Batch File"
+			],
+			[
+				"pre gi",
+				"Markdown Preview: Github Flavored Markdown: Preview in Browser"
+			],
+			[
+				"md",
+				"Markdown Preview: Open Markdown Cheat sheet"
+			],
+			[
+				"p re",
+				"Markdown Preview: Open Markdown Cheat sheet"
+			],
+			[
+				"smd",
+				"Set Syntax: Markdown"
+			],
+			[
+				"terin",
+				"Preferences: Terminal Settings – User"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"preview",
+				"Markdown Preview: Open Markdown Cheat sheet"
+			],
+			[
+				"is ta l l",
+				"Package Control: Install Package"
+			],
+			[
+				"pack in",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Add Channel"
+			],
+			[
+				"markd",
+				"Set Syntax: Markdown"
+			],
+			[
+				"pa",
+				"Project: Add Folder"
+			],
+			[
+				"py",
+				"Set Syntax: Python"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 471.0
+	},
+	"console":
+	{
+		"height": 233.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": true,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/shiqi/Projects/fortran/parameters_class.f90",
+		"/Users/shiqi/Projects/fortran/circle_class_fun.f90",
+		"/Users/shiqi/Projects/fortran/parameters_class.fun.f",
+		"/Users/shiqi/Projects/fortran/docs/funit_doc.pdf",
+		"/Users/shiqi/Projects/fortran/docs/funit_doc.md",
+		"/Users/shiqi/Projects/fortran/circle_class.f90",
+		"/Users/shiqi/Projects/fortran/funit_doc.md",
+		"/Users/shiqi/Projects/fortran/fortran.sublime-project",
+		"/Users/shiqi/Documents/untitled.mdown",
+		"/Users/shiqi/Documents/github gollum 安装小记.md",
+		"/Users/shiqi/Library/Application Support/Sublime Text 2/Packages/User/Terminal.sublime-settings",
+		"/Users/shiqi/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/shiqi/Documents/Mac OS X Terminal Colors - Stack Overflow.pdf"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"assert_equal",
+			"set",
+			"Logic",
+			"Mentor",
+			"</tt>",
+			"<tt>",
+			"software",
+			"]",
+			"[",
+			"==",
+			"gollum",
+			"Gollum",
+			"gollum",
+			"Github",
+			"github",
+			"</tt>",
+			"<tt>",
+			"tt",
+			"#",
+			"=",
+			"github gollum 安装小记",
+			";",
+			","
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.markdown":
+	{
+		"height": 136.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"set",
+				"Search: Libraries » funit (0.11.1) » Index » File:"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 242.0,
+	"status_bar_visible": true
+}
