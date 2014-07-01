@@ -18,6 +18,10 @@ class Compiling(object):
 		self.target.write ('FC = gfortran\n')
 		self.target.write ('FLAGS = -g -WALL\n')
 		self.target.write ('\n')
+		self.target.write ('PRO_DIR = /Users/shiqi/Projects/funit\n')
+		self.target.write ('SRC_DIR = $(PRO_DIR)/src\n')
+		self.target.write ('TESTS_DIR = $(PRO_DIR)/tests\n')
+		self.target.write ('\n')
 		self.target.write ('OBJ = *.o\n')
 		self.target.write ('MOD = *.mod\n')
 		self.target.write ('\n')
@@ -27,8 +31,8 @@ class Compiling(object):
 		self.target.write ('%s.o: %s.f90\n' % (self.arg2, self.arg2))
 		self.target.write ('\t$(FC) -c %s.f90\n' % self.arg2)
 		self.target.write ('\n')
-		self.target.write ('assert_class.o: assert_class.f90\n')
-		self.target.write ('\t$(FC) -c assert_class.f90\n')
+		self.target.write ('assert_class.o: $(SRC_DIR)/assert_class.f90\n')
+		self.target.write ('\t$(FC) -c $(SRC_DIR)/assert_class.f90\n')
 		self.target.write ('\n')
 		self.target.write ('clean:\n')
 		self.target.write ('\trm -f $(OBJ) $(MOD)\n')
@@ -41,8 +45,8 @@ class Compiling(object):
 
 
 
-arg1 = 'main'
-arg2 = 'test_class'
-c = Compiling(arg1, arg2)
-c.write_to_makefile()
-c.compile_makefile()
+# arg1 = 'main'
+# arg2 = 'test_class'
+# c = Compiling(arg1, arg2)
+# c.write_to_makefile()
+# c.compile_makefile()

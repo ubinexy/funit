@@ -4,6 +4,7 @@ import re
 class Finding(object):
 
     def __init__(self, raw_text):
+        raw_text += '.fun'
         self.text = open(raw_text)
 
 
@@ -54,6 +55,8 @@ class Finding(object):
         for line in self.text:
             if re.match(comment, line):
                 continue
+            if re.match('end module', line):
+                continue
             if re.match('\s*test\s+\w+\s*', line):
                 count += 1
                 name1 = re.sub(bra, substitute1, line)
@@ -67,7 +70,6 @@ class Finding(object):
                 continue
             if count > 0:
                 bone += line
-
         return (skin, bone)
 
 
@@ -76,7 +78,7 @@ class Rendering(Finding):
 
     def __init__(self, raw_text, arg1):
         super(Rendering, self).__init__(raw_text)
-        self.target = open(arg1, 'w')
+        self.target = open(arg1+'.f90', 'w')
 
 
 
@@ -118,7 +120,8 @@ class Rendering(Finding):
 
 
 # ヽ(# ≧Д≦)ノ
-b = Rendering('circle_class.fun', 'main.f90')
-b.write_to_target()
+
+# b = Rendering('circle_class.fun', 'main.f90')
+# b.write_to_target()
 
     
