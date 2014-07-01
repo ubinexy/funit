@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"cut",
+				"cut_out"
+			],
+			[
+				"cu",
+				"cut_out"
+			],
+			[
 				"a",
 				"a"
 			]
@@ -11,6 +19,38 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "src/render.py",
+			"settings":
+			{
+				"buffer_size": 2801,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "circle_class.fun",
+			"settings":
+			{
+				"buffer_size": 659,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/compile.py",
+			"settings":
+			{
+				"buffer_size": 916,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sample/basic_os.py",
+			"settings":
+			{
+				"buffer_size": 321,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -128,6 +168,8 @@
 	},
 	"file_history":
 	[
+		"/Users/shiqi/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/shiqi/Projects/funit/src/filename",
 		"/Users/shiqi/Projects/fortran/parameters_class.f90",
 		"/Users/shiqi/Projects/fortran/circle_class_fun.f90",
 		"/Users/shiqi/Projects/fortran/parameters_class.fun.f",
@@ -139,12 +181,11 @@
 		"/Users/shiqi/Documents/untitled.mdown",
 		"/Users/shiqi/Documents/github gollum 安装小记.md",
 		"/Users/shiqi/Library/Application Support/Sublime Text 2/Packages/User/Terminal.sublime-settings",
-		"/Users/shiqi/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/Users/shiqi/Documents/Mac OS X Terminal Colors - Stack Overflow.pdf"
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 37.0
 	},
 	"find_in_files":
 	{
@@ -158,6 +199,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"'''",
+			" '",
+			"render",
+			")(",
+			"cut_out",
+			"end",
+			"raw_text",
+			"split2",
+			"split1",
+			"change2",
+			"change1",
+			"split",
 			"assert_equal",
 			"set",
 			"Logic",
@@ -198,8 +251,117 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "src/render.py",
+					"settings":
+					{
+						"buffer_size": 2801,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2698,
+								2698
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "circle_class.fun",
+					"settings":
+					{
+						"buffer_size": 659,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								228,
+								228
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 60.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/compile.py",
+					"settings":
+					{
+						"buffer_size": 916,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								236,
+								236
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 270.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "sample/basic_os.py",
+					"settings":
+					{
+						"buffer_size": 321,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								271,
+								271
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],

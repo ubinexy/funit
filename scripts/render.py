@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-  
 import re
 
-
 class Finding(object):
 
     def __init__(self, raw_text):
@@ -69,31 +68,30 @@ class Finding(object):
             if count > 0:
                 bone += line
 
-        # print skin, bone
         return (skin, bone)
 
 
 
-class rend(Finding):
+class Rendering(Finding):
 
     def __init__(self, raw_text, arg1):
-        super(rend, self).__init__(raw_text)
+        super(Rendering, self).__init__(raw_text)
         self.target = open(arg1, 'w')
 
 
 
     def __del__(self):
-        super(rend, self).__del__()
+        super(Rendering, self).__del__()
         self.target.close()
 
 
 
     def cut_out(self, tag, _tag):
-        return super(rend, self).cut_out(tag, _tag)
+        return super(Rendering, self).cut_out(tag, _tag)
 
 
     def render(self):
-        return super(rend, self).render()
+        return super(Rendering, self).render()
 
 
     def header(self):
@@ -110,7 +108,7 @@ class rend(Finding):
 
 
 
-    def hello(self):
+    def write_to_target(self):
         self.target.write(self.header())
         a = self.render()
         self.target.write(a[0])
@@ -119,9 +117,8 @@ class rend(Finding):
 
 
 
-# c = Finding('circle_class.fun')
-b = rend('circle_class.fun', 'filename')
-b.hello()
 # ヽ(# ≧Д≦)ノ
+b = Rendering('circle_class.fun', 'main.f90')
+b.write_to_target()
 
     
