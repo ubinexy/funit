@@ -75,10 +75,12 @@ class Finding(object):
 
 
 class Rendering(Finding):
-
-    def __init__(self, raw_text, arg1):
+    
+    def __init__(self, raw_text, ripe_text):
+        TEST_DIR = '/Users/shiqi/Projects/funit/tests/'
+        raw_text = TEST_DIR + raw_text
         super(Rendering, self).__init__(raw_text)
-        self.target = open(arg1+'.f90', 'w')
+        self.target = open(ripe_text +'.f90', 'w')
 
 
 

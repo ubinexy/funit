@@ -16,7 +16,7 @@ class Compiling(object):
 
 	def write_to_makefile(self):
 		self.target.write ('FC = gfortran\n')
-		self.target.write ('FLAGS = -g -WALL\n')
+		self.target.write ('FLAGS = -g -Wall\n')
 		self.target.write ('\n')
 		self.target.write ('PRO_DIR = /Users/shiqi/Projects/funit\n')
 		self.target.write ('SRC_DIR = $(PRO_DIR)/src\n')
@@ -25,11 +25,11 @@ class Compiling(object):
 		self.target.write ('OBJ = *.o\n')
 		self.target.write ('MOD = *.mod\n')
 		self.target.write ('\n')
-		self.target.write ('a.exe: %s.f90 $(OBJ)\n' % self.arg1)
+		self.target.write ('a.exe: %s.f90 %s.o assert_class.o\n' % (self.arg1, self.arg2)
 		self.target.write ('\t$(FC) $(FLAGS) $(OBJ) %s.f90 -o a.exe\n' % self.arg1)
 		self.target.write ('\n')
-		self.target.write ('%s.o: %s.f90\n' % (self.arg2, self.arg2))
-		self.target.write ('\t$(FC) -c %s.f90\n' % self.arg2)
+		self.target.write ('%s.o: $(SRC_DIR)/%s.f90\n' % (self.arg2, self.arg2))
+		self.target.write ('\t$(FC) -c $(SRC_DIR)/%s.f90\n' % self.arg2)
 		self.target.write ('\n')
 		self.target.write ('assert_class.o: $(SRC_DIR)/assert_class.f90\n')
 		self.target.write ('\t$(FC) -c $(SRC_DIR)/assert_class.f90\n')
