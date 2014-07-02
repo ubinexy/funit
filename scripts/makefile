@@ -1,17 +1,20 @@
 FC = gfortran
-FLAGS = -g 
+FLAGS = -g
 
 PRO_DIR = /Users/shiqi/Projects/funit
 SRC_DIR = $(PRO_DIR)/src
-TESTS_DIR = $(PRO_DIR)/tests
+TEST_DIR = $(PRO_DIR)/tests
 
 OBJ = *.o
 MOD = *.mod
 
-a.exe: TestRunner.f90 circle_class.o assert_class.o
+a.exe: TestRunner.f90 test.o
 	$(FC) $(FLAGS) $(OBJ) TestRunner.f90 -o a.exe
 
-circle_class.o: $(SRC_DIR)/circle_class.f90
+test.o: $(TEST_DIR)/circle_class_test.f90 src.o assert_class.o
+	$(FC) -c $(TEST_DIR)/circle_class_test.f90
+
+src.o: $(SRC_DIR)/circle_class.f90
 	$(FC) -c $(SRC_DIR)/circle_class.f90
 
 assert_class.o: $(SRC_DIR)/assert_class.f90

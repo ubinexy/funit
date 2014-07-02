@@ -1,86 +1,59 @@
 # -*- coding: utf-8 -*-  
-import re
+import re, os
 
 class Finding(object):
 
-    def __init__(self, raw_text):
-        raw_text += '.fun'
-        self.text = open(raw_text)
+    def __init__(self, file):
+        # file += '.fun'
+        self.text = open(file)
 
 
     def __del__(self):
         self.text.close()
 
 
-    def cut_out(self, tag, _tag):
-
-        bra = '\s*' + tag + '[\s\S]*'
-        ket = '\s*' + _tag + '[\s\S]*'
-
-        comment = '\s*'+'!'+'[\s\S]*'
-        count = 0
-        cuts = ''
-
-        for line in self.text:
-            if re.match(comment, line):
-                continue
-            if re.match(bra, line):
-                count += 1
-                continue
-            if re.match(ket, line):
-                break
-            if count > 0:
-                cuts += line
-        
-        return cuts
-
-
-
     def render(self):
 
-        bra = '(\s*)(test\s+)(\w+\s*)'
-        ket = '(\s*end\s+)(test)(\s*)'
+        bra = '(\s*)(subroutine\s+)(\w+\s*)'
 
         comment = '\s*'+'!'+'[\s\S]*'
         count = 0
-        skin = ''
         bone = ''
 
-        def substitute1(matched):
-            return matched.group(1) + 'subroutine ' + matched.group(3) 
-
-        def substitute2(matched):
-            return matched.group(1) + 'call ' + matched.group(3)
+        def substitute(matched):
+            return matched.group(1) + 'call ' + matched.group(3) 
 
         for line in self.text:
-            if re.match(comment, line):
+            if re.match('\s*subroutine\s+setup\s*', line):
                 continue
-            if re.match('end module', line):
+            if re.match('\s*subroutine\s+teardown', line):
                 continue
-            if re.match('\s*test\s+\w+\s*', line):
-                count += 1
-                name1 = re.sub(bra, substitute1, line)
-                name2 = re.sub(bra, substitute2, line)
-                bone += name1
-                skin += name2
-                continue
-            if re.match('\s*end\s+test\s*', line):
-                bone += re.sub(ket, substitute1, line) + '\n'
-                count -= 1
+            if re.match('\s*subroutine\s+\w+\s*', line):
+                bone += '\tcall setup\n'
+                bone += re.sub(bra, substitute, line)
+                bone += '\tcall teardown\n'                
                 continue
             if count > 0:
                 bone += line
-        return (skin, bone)
+        return bone
 
 
 
 class Rendering(Finding):
-    
+    '''
+    before
+    $(PRO_DIR)/tests/class.test
+    after:
+    $(PRO_DIR)/tests/class_test.f90
+    TestRunner.f90
+    '''
     def __init__(self, raw_text, ripe_text):
-        TEST_DIR = '/Users/shiqi/Projects/funit/tests/'
-        raw_text = TEST_DIR + raw_text
-        super(Rendering, self).__init__(raw_text)
-        self.target = open(ripe_text +'.f90', 'w')
+        self.dir = '/Users/shiqi/Projects/funit/' + 'tests/'
+        self.raw = raw_text + '.test'
+        self.ripe = ripe_text
+        # self.raw = self.dir + raw_text + '_test.f90'
+        super(Rendering, self).__init__( self.dir + self.raw )
+        self.target = open('TestRunner.f90', 'w')
 
 
 
@@ -90,40 +63,38 @@ class Rendering(Finding):
 
 
 
-    def cut_out(self, tag, _tag):
-        return super(Rendering, self).cut_out(tag, _tag)
-
-
     def render(self):
         return super(Rendering, self).render()
 
 
     def header(self):
-        header1 = '''program main\n''' 
-        header2 = self.cut_out('module','contains')
-        setup_doc = self.cut_out('setup', 'end setup')
-        return header1 + header2 + setup_doc    
+        header1 = '''program main\n'''
+        header2 = '''\tuse assert_class\n'''
+        header3 = '''\tuse circle_class\n'''
+        header4 = '''\tuse %s\n''' % self.ripe
+        header5 = '''\timplicit none\n'''
+        return header1 + header2 + header3 + header4 + header5
 
 
 
     def footer(self):
-        teardown_doc = self.cut_out('teardown', 'end teardown')
-        return teardown_doc + '''end program\n'''
+        return '''end program'''
 
 
 
     def write_to_target(self):
         self.target.write(self.header())
-        a = self.render()
-        self.target.write(a[0])
+
+        self.target.write(self.render())
+
         self.target.write(self.footer())
-        self.target.write(a[1])
 
-
+        cmd = 'cp %s %s.f90' % (self.dir + self.raw, self.dir + self.ripe)
+        os.system(cmd)
 
 # ヽ(# ≧Д≦)ノ
 
-# b = Rendering('circle_class.fun', 'main.f90')
+# b = Rendering('circle_class', 'circle_class_test')
 # b.write_to_target()
 
     

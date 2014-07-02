@@ -1,4 +1,6 @@
 *.exe
 *.pyc
+/*.pyc
 *.mod
 *.o
+*/*.dSYM/*

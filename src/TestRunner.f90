@@ -1,8 +1,9 @@
 program main
 	use assert_class
 	use circle_class
-	use circle_class_test
+	use test_class
 	implicit none
+
 	call setup
 	call funit_assertions
 	call teardown
