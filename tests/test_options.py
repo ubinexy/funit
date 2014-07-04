@@ -4,5 +4,5 @@ from lib.options import Options
 
 def test_lib():
 	Opt = Options()
-	assert_equal(	Opt.prase(['-s', 'source.f']).src,
+	assert_equal(	Opt.parse(['-s', 'source.f']).src,
 				 	'source.f')

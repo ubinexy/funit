@@ -23,5 +23,5 @@ class Options(object):
 
 
 
-	def prase(self, args):
+	def parse(self, args):
 		return self.parser.parse_args(args)
