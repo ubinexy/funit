@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"ripe",
+				"ripe_text"
+			],
+			[
+				"r",
+				"ripe_text"
+			],
+			[
+				"raw",
+				"raw_text"
+			],
+			[
 				"he",
 				"header4"
 			],
@@ -59,18 +71,23 @@
 			"file": "scripts/executer.py",
 			"settings":
 			{
-				"buffer_size": 585,
+				"buffer_size": 653,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "# -*- coding: utf-8 -*-  \nimport os\n\nclass Compiling(object):\n	\n	def __init__(self, arg1, arg2):\n		self.arg1 = arg1\n		self.arg2 = arg2\n		self.target = open('makefile', 'w')\n\n\n\n	def __del__(self):\n		self.target.close()\n\n\n	def write_to_makefile(self):\n		self.target.write ('FC = gfortran\\n')\n		self.target.write ('FLAGS = -g\\n')\n		self.target.write ('\\n')\n		self.target.write ('PRO_DIR = /Users/shiqi/Projects/funit\\n')\n		self.target.write ('SRC_DIR = $(PRO_DIR)/src\\n')\n		self.target.write ('TESTS_DIR = $(PRO_DIR)/tests\\n')\n		self.target.write ('\\n')\n		self.target.write ('OBJ = *.o\\n')\n		self.target.write ('MOD = *.mod\\n')\n		self.target.write ('\\n')\n		self.target.write ('a.exe: %s.f90 %s.o assert_class.o\\n' % (self.arg1, self.arg2))\n		self.target.write ('\\t$(FC) $(FLAGS) $(OBJ) %s.f90 -o a.exe\\n' % self.arg1)\n		self.target.write ('\\n')\n		self.target.write ('%s.o: $(SRC_DIR)/%s.f90\\n' % (self.arg2, self.arg2))\n		self.target.write ('\\t$(FC) -c $(SRC_DIR)/%s.f90\\n' % self.arg2)\n		self.target.write ('\\n')\n		self.target.write ('assert_class.o: $(SRC_DIR)/assert_class.f90\\n')\n		self.target.write ('\\t$(FC) -c $(SRC_DIR)/assert_class.f90\\n')\n		self.target.write ('\\n')\n		self.target.write ('clean:\\n')\n		self.target.write ('\\trm -f $(OBJ) $(MOD)\\n')\n\n\n\n	def compile_makefile(self):\n		os.system('make')\n		os.system('make clean')\n\n\n\n# arg1 = 'main'\n# arg2 = 'test_class'\n# c = Compiling(arg1, arg2)\n# c.write_to_makefile()\n# c.compile_makefile()",
-			"file": "scripts/compiler.py",
-			"file_size": 1447,
-			"file_write_time": 1404218787000000,
+			"file": ".gitignore",
 			"settings":
 			{
-				"buffer_size": 1447,
+				"buffer_size": 39,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/shiqi/Projects/python-example-project/bin/project",
+			"settings":
+			{
+				"buffer_size": 74,
 				"line_ending": "Unix"
 			}
 		},
@@ -78,31 +95,23 @@
 			"file": "scripts/TestRunner.f90",
 			"settings":
 			{
-				"buffer_size": 258,
+				"buffer_size": 264,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "tests/circle_class.fun",
+			"file": "scripts/compiler.py",
 			"settings":
 			{
-				"buffer_size": 714,
+				"buffer_size": 1939,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/TestRunner.f90",
+			"file": "scripts/render.py",
 			"settings":
 			{
-				"buffer_size": 258,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/test_class.f90",
-			"settings":
-			{
-				"buffer_size": 707,
+				"buffer_size": 2337,
 				"line_ending": "Unix"
 			}
 		}
@@ -110,9 +119,13 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 147.0,
+		"height": 392.0,
 		"selected_items":
 		[
+			[
+				"pre",
+				"Markdown Preview: Github Flavored Markdown: Preview in Browser"
+			],
 			[
 				"smf",
 				"Set Syntax: MinimalFortran"
@@ -120,10 +133,6 @@
 			[
 				"instal",
 				"Package Control: Install Package"
-			],
-			[
-				"pre",
-				"Markdown Preview: Github Flavored Markdown: Preview in Browser"
 			],
 			[
 				"smd",
@@ -227,7 +236,14 @@
 	},
 	"file_history":
 	[
+		"/Users/shiqi/Documents/python.md",
+		"/Users/shiqi/Projects/funit/scripts/makefile",
+		"/Users/shiqi/Projects/funit/tests/circle_class_test.f90",
 		"/Users/shiqi/Projects/funit/scripts/render.py",
+		"/Users/shiqi/Projects/funit/src/test_class.f90",
+		"/Users/shiqi/Projects/funit/src/TestRunner.f90",
+		"/Users/shiqi/Projects/funit/tests/circle_class.test",
+		"/Users/shiqi/Projects/funit/scripts/compiler.py",
 		"/Users/shiqi/Projects/funit/scripts/render1.py",
 		"/Users/shiqi/Projects/funit/scripts/TestRunner.f90",
 		"/Users/shiqi/tt.f03",
@@ -235,7 +251,6 @@
 		"/Users/shiqi/Projects/funit/src/assert_class.f90",
 		"/Users/shiqi/Projects/funit/src/circle_class.f90",
 		"/Users/shiqi/area_class.fun",
-		"/Users/shiqi/Projects/funit/scripts/makefile",
 		"/Users/shiqi/area_class_fun.f90",
 		"/Users/shiqi/Projects/funit/tests/circle_class.fun",
 		"/Users/shiqi/Projects/funit/.gitignore",
@@ -277,6 +292,19 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"raw_text",
+			"        ",
+			"       ",
+			"      ",
+			"     ",
+			"tests",
+			"filename",
+			"arg1",
+			"target",
+			"arg2",
+			"__main",
+			". ",
+			"makefile",
 			"setup_",
 			"write_to_target",
 			"yes",
@@ -347,7 +375,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -355,15 +383,15 @@
 					"file": "scripts/executer.py",
 					"settings":
 					{
-						"buffer_size": 585,
+						"buffer_size": 653,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								128,
-								128
+								401,
+								401
 							]
 						],
 						"settings":
@@ -379,24 +407,23 @@
 				},
 				{
 					"buffer": 1,
-					"file": "scripts/compiler.py",
+					"file": ".gitignore",
 					"settings":
 					{
-						"buffer_size": 1447,
+						"buffer_size": 39,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								943,
-								945
+								18,
+								18
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -406,24 +433,23 @@
 				},
 				{
 					"buffer": 2,
-					"file": "scripts/TestRunner.f90",
+					"file": "/Users/shiqi/Projects/python-example-project/bin/project",
 					"settings":
 					{
-						"buffer_size": 258,
+						"buffer_size": 74,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								81,
-								81
+								74,
+								74
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/MinimalFortran/MinimalFortran.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -433,18 +459,18 @@
 				},
 				{
 					"buffer": 3,
-					"file": "tests/circle_class.fun",
+					"file": "scripts/TestRunner.f90",
 					"settings":
 					{
-						"buffer_size": 714,
+						"buffer_size": 264,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								75,
-								75
+								5,
+								5
 							]
 						],
 						"settings":
@@ -460,23 +486,23 @@
 				},
 				{
 					"buffer": 4,
-					"file": "src/TestRunner.f90",
+					"file": "scripts/compiler.py",
 					"settings":
 					{
-						"buffer_size": 258,
+						"buffer_size": 1939,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								258,
-								258
+								84,
+								84
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/MinimalFortran/MinimalFortran.tmLanguage",
+							"syntax": "Packages/Python/Python.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -487,24 +513,25 @@
 				},
 				{
 					"buffer": 5,
-					"file": "src/test_class.f90",
+					"file": "scripts/render.py",
 					"settings":
 					{
-						"buffer_size": 707,
+						"buffer_size": 2337,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								17,
-								17
+								2060,
+								2060
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/MinimalFortran/MinimalFortran.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

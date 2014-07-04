@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-  
 import re, os
 
-class Finding(object):
+class Find(object):
 
     def __init__(self, file):
-        # file += '.fun'
         self.text = open(file)
 
 
@@ -39,32 +38,25 @@ class Finding(object):
 
 
 
-class Rendering(Finding):
-    '''
-    before
-    $(PRO_DIR)/tests/class.test
-    after:
-    $(PRO_DIR)/tests/class_test.f90
-    TestRunner.f90
-    '''
-    def __init__(self, raw_text, ripe_text):
-        self.dir = '/Users/shiqi/Projects/funit/' + 'tests/'
-        self.raw = raw_text + '.test'
-        self.ripe = ripe_text
-        # self.raw = self.dir + raw_text + '_test.f90'
-        super(Rendering, self).__init__( self.dir + self.raw )
+class Parse(Find):
+    
+    def __init__(self, raw_text):
+        
+        Find.__init__( self, raw_text)
+        self.raw = raw_text
+        self.ripe = raw_text + '.f90'
         self.target = open('TestRunner.f90', 'w')
 
 
 
     def __del__(self):
-        super(Rendering, self).__del__()
+        Find.__del__(self)
         self.target.close()
 
 
 
     def render(self):
-        return super(Rendering, self).render()
+        return Find.render(self)
 
 
     def header(self):
@@ -84,12 +76,10 @@ class Rendering(Finding):
 
     def write_to_target(self):
         self.target.write(self.header())
-
         self.target.write(self.render())
-
         self.target.write(self.footer())
 
-        cmd = 'cp %s %s.f90' % (self.dir + self.raw, self.dir + self.ripe)
+        cmd = 'cp %s %s' % (self.raw, self.ripe)
         os.system(cmd)
 
 # ヽ(# ≧Д≦)ノ

@@ -1,7 +1,7 @@
 program main
 	use assert_class
 	use circle_class
-	use circle_class_test
+	use /Users/shiqi/Projects/funit/src/circle_class.test.f90
 	implicit none
 	call setup
 	call funit_assertions
