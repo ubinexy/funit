@@ -8,21 +8,19 @@ class Options(object):
 
 
 	def _init_parser(self):
-		usage = 'bin/project [选项] file'
+		usage = 'bin/funit (-t foo.test)'
 		self.parser = ArgumentParser(usage=usage)
 		
-		self.parser.add_argument(	'-s',
-									'--src',
-									dest='src',
-									help='source destination')
+		# self.parser.add_argument('-s',
+		# 						'--src',
+		# 						dest='src',
+		# 						help='specify source destination')
 
-		self.parser.add_argument(	'-t',
-									'--target',
-									dest='target',
-									help='target destination')
-
+		self.parser.add_argument('-t',
+								dest='target',
+								help='specify foo.test path')
 
 
 	def parse(self, opts):
-		print self.parser.parse_args(opts)
+		return self.parser.parse_args(opts)
 		

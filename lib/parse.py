@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-  
-import re, os
+import os, re
 
 class _re(object):
 
@@ -12,7 +12,6 @@ class _re(object):
 
     def group(self,i):
         return self.rematch.group(i)
-
 
 
 class Parse(object):
