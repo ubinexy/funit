@@ -16,7 +16,7 @@ class Compiling(object):
 		# self.src = src_name
 		path,file=os.path.split(src)
 		self.src = os.path.splitext(file)[0]
-		self.directory = os.path.split(path)[0]
+		# self.directory = os.path.split(path)[0]
 		self.makefile = open('makefile', 'w')
 
 
@@ -29,7 +29,7 @@ class Compiling(object):
 		self.makefile.write ( 'FC = gfortran\n' )
 		self.makefile.write ( 'FLAGS = -g\n' )
 		self.makefile.write ( '\n' )
-		self.makefile.write ( 'PRO_DIR = %s\n' % self.directory )
+		self.makefile.write ( 'PRO_DIR = .\n' )
 		self.makefile.write ( 'SRC_DIR = $(PRO_DIR)/src\n' )
 		self.makefile.write ( 'TEST_DIR = $(PRO_DIR)/tests\n' )
 		self.makefile.write ( '\n' )
@@ -39,8 +39,8 @@ class Compiling(object):
 		self.makefile.write ( 'a.exe: TestRunner.f90 test.o\n' )
 		self.makefile.write ( '\t$(FC) $(FLAGS) $(OBJ) TestRunner.f90 -o a.exe\n' )
 		self.makefile.write ( '\n' )
-		self.makefile.write ( 'test.o: $(TEST_DIR)/%s_test.f90 src.o assert_class.o\n' % self.src )
-		self.makefile.write ( '\t$(FC) -c $(TEST_DIR)/%s_test.f90\n' % self.src )
+		self.makefile.write ( 'test.o: $(TEST_DIR)/%s.test.f90 src.o assert_class.o\n' % self.src )
+		self.makefile.write ( '\t$(FC) -c $(TEST_DIR)/%s.test.f90\n' % self.src )
 		self.makefile.write ( '\n' )
 		self.makefile.write ( 'src.o: $(SRC_DIR)/%s.f90\n' % self.src )
 		self.makefile.write ( '\t$(FC) -c $(SRC_DIR)/%s.f90\n' % self.src )
@@ -49,7 +49,7 @@ class Compiling(object):
 		self.makefile.write ( '\t$(FC) -c $(SRC_DIR)/assert_class.f90\n' )
 		self.makefile.write ( '\n' )
 		self.makefile.write ( 'clean:\n' )
-		self.makefile.write ( '\trm -f $(OBJ) $(MOD)\n' )
+		self.makefile.write ( '\trm -f $(OBJ) $(MOD) TestRunner.f90 a.exe makeclean\n' )
 		# self.makefile.write(text)
 
 

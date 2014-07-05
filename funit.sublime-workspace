@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"make",
+				"makefile"
+			],
+			[
+				"dest",
+				"destination"
+			],
+			[
+				"o",
+				"option"
+			],
+			[
 				"ripe",
 				"ripe_text"
 			],
@@ -67,54 +79,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "scripts/executer.py",
-			"settings":
-			{
-				"buffer_size": 653,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": ".gitignore",
-			"settings":
-			{
-				"buffer_size": 39,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/shiqi/Projects/python-example-project/bin/project",
-			"settings":
-			{
-				"buffer_size": 74,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "scripts/TestRunner.f90",
-			"settings":
-			{
-				"buffer_size": 264,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "scripts/compiler.py",
-			"settings":
-			{
-				"buffer_size": 1939,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "scripts/render.py",
-			"settings":
-			{
-				"buffer_size": 2337,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -122,6 +86,14 @@
 		"height": 392.0,
 		"selected_items":
 		[
+			[
+				"p",
+				"Set Syntax: Python"
+			],
+			[
+				"py",
+				"Set Syntax: Python"
+			],
 			[
 				"pre",
 				"Markdown Preview: Github Flavored Markdown: Preview in Browser"
@@ -211,10 +183,6 @@
 				"Project: Add Folder"
 			],
 			[
-				"py",
-				"Set Syntax: Python"
-			],
-			[
 				"insta",
 				"Package Control: Install Package"
 			]
@@ -236,24 +204,51 @@
 	},
 	"file_history":
 	[
+		"/Users/shiqi/Projects/fortran/tests/circle_class.test",
+		"/Users/shiqi/Projects/funit/tests/test_parse.py",
+		"/Users/shiqi/Projects/funit/lib/compiler.py",
+		"/Users/shiqi/Projects/funit/makefile",
+		"/Users/shiqi/Projects/fortran/circle_class.fun",
+		"/Users/shiqi/Projects/funit/lib/fTest.py",
+		"/Users/shiqi/Projects/funit/main.py",
+		"/Users/shiqi/Projects/funit/src/circle_class.test",
+		"/Users/shiqi/Projects/funit/lib/parse.py",
+		"/Users/shiqi/Projects/funit/TestRunner.f90",
+		"/Users/shiqi/Projects/funit/src/circle_class.test.f90",
+		"/Users/shiqi/Projects/funit/src/assert_class.f90",
+		"/Users/shiqi/Projects/funit/a.OutputFile",
+		"/Users/shiqi/Projects/funit/tests/test_compile.py",
+		"/Users/shiqi/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/shiqi/Projects/funit/lib/options.py",
+		"/Users/shiqi/Projects/python-example-project/bin/project",
+		"/Users/shiqi/Projects/funit/bin/funit",
+		"/Users/shiqi/Projects/funit/lib/__init__.py",
+		"/Users/shiqi/Projects/funit/funit.sublime-project",
+		"/Users/shiqi/Projects/funit/tests/test_options.py",
+		"/Users/shiqi/Projects/funit/tests/test_prase.py",
+		"/Users/shiqi/Projects/funit/lib/test_prase.py",
+		"/Users/shiqi/Projects/funit/scripts/main.py",
+		"/Users/shiqi/Projects/funit/scripts/compiler.py",
+		"/Users/shiqi/Projects/funit/scripts/options.py",
+		"/Users/shiqi/Projects/funit/scripts/TestRunner.f90",
+		"/Users/shiqi/Projects/funit/scripts/Test.py",
+		"/Users/shiqi/Projects/funit/scripts/project.py",
+		"/Users/shiqi/Projects/funit/.gitignore",
+		"/Users/shiqi/Projects/funit/scripts/render.py",
+		"/Users/shiqi/Projects/python-example-project/bin/funit",
 		"/Users/shiqi/Documents/python.md",
 		"/Users/shiqi/Projects/funit/scripts/makefile",
 		"/Users/shiqi/Projects/funit/tests/circle_class_test.f90",
-		"/Users/shiqi/Projects/funit/scripts/render.py",
 		"/Users/shiqi/Projects/funit/src/test_class.f90",
 		"/Users/shiqi/Projects/funit/src/TestRunner.f90",
 		"/Users/shiqi/Projects/funit/tests/circle_class.test",
-		"/Users/shiqi/Projects/funit/scripts/compiler.py",
 		"/Users/shiqi/Projects/funit/scripts/render1.py",
-		"/Users/shiqi/Projects/funit/scripts/TestRunner.f90",
 		"/Users/shiqi/tt.f03",
 		"/Users/shiqi/Documents/fortran.mdown",
-		"/Users/shiqi/Projects/funit/src/assert_class.f90",
 		"/Users/shiqi/Projects/funit/src/circle_class.f90",
 		"/Users/shiqi/area_class.fun",
 		"/Users/shiqi/area_class_fun.f90",
 		"/Users/shiqi/Projects/funit/tests/circle_class.fun",
-		"/Users/shiqi/Projects/funit/.gitignore",
 		"/Users/shiqi/Projects/funit/circle_class.fun",
 		"/Users/shiqi/Projects/funit/sample/basic_os.py",
 		"/Users/shiqi/Projects/funit/src/run.py",
@@ -261,7 +256,6 @@
 		"/Users/shiqi/Projects/funit/src/render.py",
 		"/Users/shiqi/Projects/funit/src/compile.py",
 		"/Users/shiqi/Projects/funit/src/makefile",
-		"/Users/shiqi/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/Users/shiqi/Projects/funit/src/filename",
 		"/Users/shiqi/Projects/fortran/parameters_class.f90",
 		"/Users/shiqi/Projects/fortran/circle_class_fun.f90",
@@ -292,6 +286,26 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"TEST_DIR",
+			"TEST",
+			"program main\n# 	use circle_class_test\n# 	implicit none\n# 	call setup\n# 	call funit_assertions\n# 	call teardown\n# 	call setup\n# 	call radius_is_stored_properly\n# 	call teardown\n# 	call setup\n# 	call area_varies_with_radius\n# 	call teardown\n# end program\n# '''\n",
+			"\n        ",
+			"write_to_makefile",
+			"text",
+			"src",
+			"fun",
+			"compile_makefile",
+			"_fun",
+			"'\n",
+			"write_to_makefile",
+			"self.makefile.write",
+			"write_to_makefile",
+			"os",
+			"self.makefile.write",
+			"Compiling",
+			"src",
+			"ripe",
+			"):\n",
 			"raw_text",
 			"        ",
 			"       ",
@@ -375,170 +389,8 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "scripts/executer.py",
-					"settings":
-					{
-						"buffer_size": 653,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								401,
-								401
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": ".gitignore",
-					"settings":
-					{
-						"buffer_size": 39,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								18,
-								18
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/Users/shiqi/Projects/python-example-project/bin/project",
-					"settings":
-					{
-						"buffer_size": 74,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								74,
-								74
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "scripts/TestRunner.f90",
-					"settings":
-					{
-						"buffer_size": 264,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5,
-								5
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/MinimalFortran/MinimalFortran.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "scripts/compiler.py",
-					"settings":
-					{
-						"buffer_size": 1939,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								84,
-								84
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "scripts/render.py",
-					"settings":
-					{
-						"buffer_size": 2337,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2060,
-								2060
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -573,6 +425,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 136.0
+	},
 	"output.markdown":
 	{
 		"height": 136.0

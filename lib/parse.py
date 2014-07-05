@@ -58,13 +58,14 @@ class Parse(object):
 
         header1 = '''program main\n'''
         header2 = '''\tuse %s\n''' % _mod
-        header3 = '''\timplicit none\n'''
-        return header1 + header2 + header3
+        header3 = '''\tuse assert_class\n'''
+        header4 = '''\timplicit none\n'''
+        return header1 + header2 + header3 + header4
 
 
 
     def footer(self):
-        return '''end program'''
+        return '''\tprint *,'passed',count\nend program'''
 
 
 

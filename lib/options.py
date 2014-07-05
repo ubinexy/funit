@@ -23,5 +23,6 @@ class Options(object):
 
 
 
-	def parse(self, args):
-		return self.parser.parse_args(args)
+	def parse(self, opts):
+		print self.parser.parse_args(opts)
+		

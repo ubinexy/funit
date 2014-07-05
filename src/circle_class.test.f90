@@ -20,7 +20,7 @@ contains
 	subroutine funit_assertions
 		call assert_real_equal(0.999999999e0, 1.0e0)
 		call assert_equal_with(1e-7, 0.0, 1e-6)
-		call assert_equal(1, 5 - 4)
+		call assert_equal(1, 5 - 3)
 		call assert_true(4 == 4)
 	end subroutine
 

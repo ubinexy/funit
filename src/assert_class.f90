@@ -9,7 +9,8 @@ contains
         implicit none
         integer :: actual, expect
         if(actual .ne. expect) then 
-            print *, 'assert_equal() fail'
+            print *, 'assert_equal() fail:'
+            print *, actual, 'is not as expect as', expect
         else
             count = count + 1 
         end if
@@ -20,7 +21,8 @@ contains
         implicit none
         real :: actual, expect
         if(actual .ne. expect) then 
-            print *, 'assert_real_equal() fail'
+            print *, 'assert_real_equal() fail:'
+            print *, actual, 'is not as expect as', expect
         else
             count = count + 1
         end if
@@ -40,7 +42,7 @@ contains
         real :: error
         error = abs(actual-expect)
         if( error .ge. tor) then
-            print *, 'assert_equal_with() fail'
+            print *, 'assert_equal_with() fail:'
         else
             count = count + 1
         end if
