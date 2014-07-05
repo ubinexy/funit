@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-  
-import os, re
+import sys, os, re
 from compiler import *
 from parse import *
 
+class OptionError(Exception):
+	pass
 
 class Test(object):
 
@@ -11,9 +13,23 @@ class Test(object):
 	def __init__(self, target):
 		self.target = target
 		m = re.match('([\s\S]*)(tests/)([^\.]+)(\.test)',target)
-		# Need to do:
-		# raise exception 
+		try:
+			if m == None:
+				raise OptionError()
+		except OptionError:
+			print "Can't parse %s, try -h option for help!" % target
+			sys.exit(2)
+
+		
 		self.source = m.group(1) + 'src/' + m.group(3) + '.f90'
+		try:
+			if os.path.exists(self.source):
+				pass
+			else:
+				raise OptionError()
+		except OptionError:
+			print "Can't find %s, try -h option for help!" %self.source
+			sys.exit(2)
 		self._parse_and_compile()
 
 

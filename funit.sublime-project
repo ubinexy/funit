@@ -2,7 +2,7 @@
 	"folders":
 	[
 		{
-			"path": "/Users/shiqi/Projects/bak/funit",
+			"path": "/Users/shiqi/Projects/funit",
             "folder_exclude_patterns": ["a.exe.dSYM"]
 		}
 	]
